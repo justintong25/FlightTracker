@@ -6,15 +6,15 @@ public class Flight {
 	private int numBusinessClassSeats;
 	private int numFirstClassSeats;
 	
-	public Flight(int numEconomySeats, int numBusinessClassSeats, int numFirstClassSeats, 
-			String departureLocation, String arrivalLocation, String departureDate) {
+	public Flight(String departureLocation, String arrivalLocation, String departureDate, 
+			int numEconomySeats, int numBusinessClassSeats, int numFirstClassSeats) {
 		
-		this.numEconomySeats = numEconomySeats;
-		this.numBusinessClassSeats = numBusinessClassSeats;
-		this.numFirstClassSeats = numFirstClassSeats;
 		this.departureLocation = departureLocation;
 		this.arrivalLocation = departureLocation;
 		this.departureDate = departureDate;
+		this.numEconomySeats = numEconomySeats;
+		this.numBusinessClassSeats = numBusinessClassSeats;
+		this.numFirstClassSeats = numFirstClassSeats;
 	}
 
 	public int getNumEconomySeats() {
