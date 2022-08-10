@@ -1,4 +1,6 @@
-public class Flight {
+import java.io.Serializable;
+
+public class Flight implements Serializable {
 	private String departureLocation;
 	private String departureDate;
 	private String arrivalLocation;
@@ -28,14 +30,8 @@ public class Flight {
 		System.out.printf("%-10s", "| " + this.getNumFirstClassSeats());
 		System.out.println("");
 
-		String s1 = String.format("%-12s |", this.getDepartureLocation());
-		String s2 = String.format("%-9s | ", this.getArrivalLocation());
-		String s3 = String.format("%-11s | ", this.getDepartureDate());
-		String s4 = String.format("%-28s |", this.getNumEconomySeats());
-		String s5 = String.format("%-43s | ", this.getNumBusinessClassSeats());
-		String s6 = String.format("%-30s", this.getNumFirstClassSeats());
 
-		return s1 + s2 + s3 + s4 + s5 + s6;
+		return "";
 	}
 
 	public int getNumEconomySeats() {
@@ -84,5 +80,12 @@ public class Flight {
 
 	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
+	}
+
+	public Flight updateSeats(Flight f){
+		f.setNumBusinessClassSeats(this.numBusinessClassSeats - f.getNumBusinessClassSeats());
+		f.setNumFirstClassSeats(this.numFirstClassSeats - f.getNumFirstClassSeats());
+		f.setNumEconomySeats(this.numEconomySeats- f.getNumBusinessClassSeats());
+		return f;
 	}
 }
