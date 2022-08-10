@@ -24,6 +24,7 @@ public class MainMenu {
             System.out.println("Please Enter a Valid Number.");
             System.out.println("");
         }
+        scan.close(); // added
         return choice;
     }
 
@@ -34,22 +35,18 @@ public class MainMenu {
             userSelection = printMenu();
             switch(userSelection.getChoice()){
                 case 1:
-                    //Add Search For Flight Here
+                    // perhaps creating a sub-level `Choice` instance here would be more optimal ?
                     Scanner search = new Scanner(System.in);
-
                     System.out.println("Enter departure location (e.g., LGA):");
                     String departureLocation = search.nextLine();
-
                     System.out.println("Enter arrival location (e.g., LAX):");
                     String arrivalLocation = search.nextLine();
-
                     System.out.println("Enter departure date (as MM/DD/YYYY):");
                     String departureDate = search.nextLine();
-
                     userSelection = new SearchFlights(userSelection.getChoice(), departureLocation, arrivalLocation, departureDate);
-                    
                     userSelection.print();
                     System.out.println("");
+                    search.close(); 
                     break;
                 case 2:
                     userSelection = new ShowAll(userSelection.getChoice());
