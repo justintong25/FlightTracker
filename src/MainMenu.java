@@ -37,6 +37,9 @@ public class MainMenu {
                     //Add Search For Flight Here
                     break;
                 case 2:
+                    userSelection = new ShowAll(userSelection.getChoice());
+                    userSelection.print();
+                    System.out.println("");
                     break;
                 case 3: 
                     System.out.println("Quitting.");
