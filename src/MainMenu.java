@@ -1,6 +1,3 @@
-// Main Menu java
-
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,6 +35,21 @@ public class MainMenu {
             switch(userSelection.getChoice()){
                 case 1:
                     //Add Search For Flight Here
+                    Scanner search = new Scanner(System.in);
+
+                    System.out.println("Enter departure location (e.g., LGA):");
+                    String departureLocation = search.nextLine();
+
+                    System.out.println("Enter arrival location (e.g., LAX):");
+                    String arrivalLocation = search.nextLine();
+
+                    System.out.println("Enter departure date (as MM/DD/YYYY):");
+                    String departureDate = search.nextLine();
+
+                    userSelection = new SearchFlights(userSelection.getChoice(), departureLocation, arrivalLocation, departureDate);
+                    
+                    userSelection.print();
+                    System.out.println("");
                     break;
                 case 2:
                     userSelection = new ShowAll(userSelection.getChoice());
