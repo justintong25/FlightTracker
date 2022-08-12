@@ -6,6 +6,9 @@ public class ShowAll extends Choice{
         super(choice);
     }
 
+    public ShowAll() {
+    }
+
     public int getChoice(){
         return choice;
     }

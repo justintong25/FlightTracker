@@ -1,5 +1,10 @@
-public class Choice {
+import java.io.IOException;
+
+public class Choice implements State{
+
     public int choice;
+
+    public Choice(){}
 
     public Choice(int choice){
         this.choice = choice;
@@ -13,7 +18,8 @@ public class Choice {
         this.choice = choice;
     }
 
-    public void print(){
+    @Override
+    public void print() throws IOException{
         System.out.println("Placeholder");
     }
 }
