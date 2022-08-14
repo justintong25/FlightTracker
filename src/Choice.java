@@ -20,6 +20,6 @@ public class Choice implements State{
 
     @Override
     public void print() throws IOException{
-        System.out.println("Placeholder");
+        System.out.println("");
     }
 }
