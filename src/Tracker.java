@@ -36,7 +36,6 @@ public class Tracker {
 
     public static void editFile(Flight f) throws IOException{
         try {
-            // input the file content to the StringBuffer "input"
             BufferedReader file = new BufferedReader(new FileReader("src/flightData.txt"));
             StringBuffer inputBuffer = new StringBuffer();
             String line;
@@ -51,14 +50,6 @@ public class Tracker {
             }
             file.close();
             String inputStr = inputBuffer.toString();
-    
-            System.out.println(inputStr); // display the original file for debugging
-
-    
-            // display the new file for debugging
-            System.out.println("----------------------------------\n" + inputStr);
-    
-            // write the new string with the replaced line OVER the same file
             FileOutputStream fileOut = new FileOutputStream("src/flightData.txt");
             fileOut.write(inputStr.getBytes());
             fileOut.close();

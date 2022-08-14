@@ -28,6 +28,7 @@ public class MainMenu {
             }
         } catch(NumberFormatException e) {
             System.out.println("Please Enter a Valid Number.");
+            choice = new Choice(0);
             System.out.println("");
         }
         // scan.close(); // added

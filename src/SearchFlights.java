@@ -59,8 +59,10 @@ public class SearchFlights extends Choice {
         Scanner search = new Scanner(System.in);
         System.out.println("Enter departure location (e.g., LGA):");
         String departureLocation = search.nextLine();
+        departureLocation = departureLocation.toUpperCase();
         System.out.println("Enter arrival location (e.g., LAX):");
         String arrivalLocation = search.nextLine();
+        arrivalLocation = arrivalLocation.toUpperCase();
         System.out.println("Enter departure date (as MM/DD/YYYY) or Press Enter To Show All Dates :");
         String departureDate = search.nextLine();
         SearchFlights searcher;
